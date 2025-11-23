@@ -207,9 +207,9 @@ body{
     <section class="comments" id="commentsList"></section>
   </div>
 
-  <script src="giriş.js"></script>
+ 
 </body>
-<scratch>// 📌 Sayfa Elemanları
+<script>// 📌 Sayfa Elemanları
 const loginPage = document.getElementById("loginPage");
 const registerPage = document.getElementById("registerPage");
 const commentPage = document.getElementById("commentPage");
@@ -355,5 +355,5 @@ postBtn.addEventListener("click", () => {
     }
   });
 });
-</scratch>
+</script>
 </html>
