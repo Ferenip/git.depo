@@ -1,0 +1,258 @@
+/* --- RENKLER VE TEMEL AYARLAR --- */
+        :root {
+            --dark-green: #153523; 
+            --gold: #c6a87c;       
+            --white: #ffffff;
+            --gray-inactive: #2a2a2a; 
+            --text-gray: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-green);
+            color: var(--white);
+            background-image: url('back-ground.png'); /* ARKA PLAN */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        /* --- ÜST MENÜ (HEADER) --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: var(--dark-green);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--gold);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .right-menu {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .lang-search {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-left: 1px solid rgba(255,255,255,0.2); 
+            padding-left: 30px;
+        }
+
+        .lang-search img {
+            width: 30px;
+            border-radius: 3px;
+        }
+
+        .search-icon {
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* --- HERO & SLIDER KISMI --- */
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 5%;
+            gap: 40px;
+            min-height: 60vh;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .slider-indicators {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+
+        .indicator .line {
+            width: 40px;
+            height: 3px;
+            background-color: var(--white);
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            color: var(--gold);
+        }
+
+        .indicator.active .line {
+            background-color: var(--gold);
+        }
+
+        .slider-container {
+            flex: 1.5;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 400%; 
+        }
+
+        .slide {
+            width: 100%;
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- BUTONLAR --- */
+        .toggle-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .toggle-btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn-active {
+            background-color: var(--dark-green);
+            color: var(--white);
+            border: 2px solid #1e4d34;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-inactive {
+            background-color: var(--gray-inactive);
+            color: var(--text-gray);
+        }
+
+        /* --- ÜRÜN MENÜSÜ --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            padding: 0 10% 100px 10%;
+        }
+
+        #kupalar-grid {
+            display: none; 
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        /*içecekler*/
+        .product-img {
+            height: 140px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 10px 10px rgba(0,0,0,0.3));
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            border: 2px solid var(--gold);
+            padding: 8px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        @media (max-width: 900px) {
+            .hero-section { flex-direction: column; height: auto; gap: 50px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            nav { display: none; }
+            .lang-search { border-left: none; padding-left: 0; }
+        }
+        @media (max-width: 600px) {
+            .products-grid { grid-template-columns: 1fr; }
+        }
